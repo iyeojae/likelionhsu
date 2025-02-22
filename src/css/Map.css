@@ -1,0 +1,128 @@
+.map {
+    background-color: #fffae1;
+}
+.main-intro {
+    margin: 0 auto;
+    width: 272px;
+    height: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(219, 232, 236, 0.45); /* 색상 및 블러 수정 필요 */
+    box-shadow: 0 0 70px 0 rgb(219, 232, 236); /* 색상 및 블러 수정 필요 */
+    border-radius: 100%;
+}
+.main-intro-txt {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    z-index: 10;
+}
+.main-intro-txt h2 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 5px 4px #0000004D;
+}
+.main-intro-txt h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 5px 4px #0000004D;
+}
+.main-intro-txt h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+.main-intro-txt p {
+    margin: 0;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.main-cont {
+    margin-top: 47px;
+    text-align: center;
+    color: #00000082;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 43px;
+}
+
+.main-cont p {
+    margin: 0 auto;
+}
+
+.map-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-cont img {
+    box-sizing: border-box;
+    width: 339px;
+    height: 331px;
+    border: 3px solid #B7D2DA;
+    border-radius: 25px;
+}
+
+.map-cont p{
+    color: #00000082;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 43px;
+}
+
+.perfor-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.perfor-club{
+    box-sizing: border-box;
+    padding: 16px;
+    width: 339px;
+    height: 84px;
+    background: rgba(228, 238, 245, 0.4);
+    border: 1px solid #B7D2DA;
+    border-radius: 8px;
+}
+
+.perfor-club h5{
+    margin: 0;
+    font-size: 16px
+}
+
+.perfor-club p{
+    margin-top: 10px;
+    font-style: normal;
+    font-size: 16px;
+
+}
+
+.perfor-song {
+    margin: 5px;
+    box-sizing: border-box;
+    padding: 16px;
+    width: 339px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #B7D2DA;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.perfor-song p {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+}

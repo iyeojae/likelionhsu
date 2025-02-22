@@ -1,0 +1,105 @@
+.carousel-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    overflow: hidden
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container-btm {
+    margin: 0;
+}
+
+.carousel-item img {
+    width: 105px;
+    height: 148px;
+    object-fit: fill;
+}
+
+.carousel-item.active {
+    width: 147px;
+    height: 208px;
+    object-fit: fill;
+}
+
+
+/*.carousel-item {
+    width: 105px;
+    height: 148px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.7;
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+!* 이미지 스타일 *!
+.carousel-item img {
+    width: 147px;
+    height: 208px;
+    object-fit: cover;
+}
+
+!* 중앙 이미지 스타일 *!
+.carousel-item.active {
+    width: 147px;
+    height: 208px;
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 5;
+}*/
+
+
+.slick-list {
+    display: flex !important; /* 슬라이드가 가로 정렬되도록 변경 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 필요하면 조정 */
+    position: relative !important;
+}
+
+.slick-track {
+    width: 400px !important;
+    align-items: center;
+    justify-content: center;
+    display: flex !important; /* 슬라이드 내부 트랙도 가로 정렬 */
+    margin: 0;
+    padding: 0;
+}
+
+.slick-center {
+    transform: scale(1.2) !important; /* ✅ 중앙에 위치한 슬라이드만 확대 */
+    opacity: 1 !important;
+    z-index: 5;
+}
+
+.slick-slide {
+    display: flex !important; /* 개별 슬라이드도 가로 정렬 */
+    justify-content: center;
+    align-items: center;
+    width: 140px !important; /* 슬라이드 크기 강제 */
+    height: 220px !important;
+    flex-shrink: 0;
+    margin: 0 5px !important;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.7;
+}
+
+.slick-slide[aria-hidden="true"] {
+    pointer-events: none; /* ✅ 포커스 방지 */
+}
+
+
+
+
+

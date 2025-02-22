@@ -1,2 +1,1 @@
-# likelionhsu
-Club_pamphlet
+2025 한서대학교 동아리 박람회 안내 사이트입니다.

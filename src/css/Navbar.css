@@ -1,0 +1,88 @@
+
+.navbar-container {
+    background-color: #fffae1;
+    height: 100%;
+}
+
+.nav-container {
+    max-width: 430px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+
+.logo {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 45px;
+    height: 45px;
+    margin-left: 85%;
+}
+
+
+.nav-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.nav-icon-cont {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+
+.nav-name-cont {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+}
+/*
+!* 스크롤바 숨기기 *!
+.nav-icon-cont::-webkit-scrollbar,
+.nav-name-cont::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}*/
+
+.nav-grid {
+    display: flex;
+    border-top: 4px solid #CCE2E9;
+    border-bottom: 4px solid #B7D2DA;
+    padding: 9px 21px;
+    gap: 51px;
+}
+
+.nav-name {
+    display: flex;
+    gap: 51px;
+    padding: 3px 23px;
+    font-size: 14px;
+}
+
+.nav-name p {
+    width: 30px;
+}
+
+.nav-item {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon.active {
+    transform: scale(1.3);
+}
