@@ -12,7 +12,7 @@ const CategoriesNav = ({ categories }) => {
     useEffect(() => {
         const fetchLikeCount = async () => {
             try {
-                const response = await fetch(`http://hsuclubapi.ap-northeast-2.elasticbeanstalk.com/api/likes/${selectedCategory.id}`);
+                const response = await fetch(`https://hsuclubapi.ap-northeast-2.elasticbeanstalk.com/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
                     const count = await response.json();
                     setClickCount(count);
@@ -28,7 +28,7 @@ const CategoriesNav = ({ categories }) => {
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
         try {
-            const response = await fetch(`http://hsuclubapi.ap-northeast-2.elasticbeanstalk.com/api/likes/${selectedCategory.id}`, {
+            const response = await fetch(`https://hsuclubapi.ap-northeast-2.elasticbeanstalk.com/api/likes/${selectedCategory.id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
