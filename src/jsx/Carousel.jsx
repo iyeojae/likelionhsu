@@ -9,7 +9,7 @@ import poster2 from "../img/main/리프레시.jpg";
 import poster3 from "../img/main/멋사.jpg";
 import poster4 from "../img/main/무브.jpg";
 import poster5 from "../img/main/무혼.jpg";
-import poster6 from "../img/main/총동연.jpg"
+import poster6 from "../img/main/총동연_수정.png"
 import poster7 from "../img/main/별헤는밤.jpg";
 import poster8 from "../img/main/설화.jpg";
 import poster9 from "../img/main/정음.jpg";
