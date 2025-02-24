@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import '../css/Map.css';
-import inform from '../img/inform.png';
+import inform from '../img/inform_new.png';
 
 const Map = () => {
     return (

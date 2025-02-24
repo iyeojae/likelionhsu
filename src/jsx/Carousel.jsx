@@ -9,11 +9,12 @@ import poster2 from "../img/main/리프레시.jpg";
 import poster3 from "../img/main/멋사.jpg";
 import poster4 from "../img/main/무브.jpg";
 import poster5 from "../img/main/무혼.jpg";
-import poster6 from "../img/main/별헤는밤.jpg";
-import poster7 from "../img/main/설화.jpg";
-import poster8 from "../img/main/정음.jpg";
-import poster9 from "../img/main/차일드.jpg";
-import poster10 from "../img/main/히바.jpg";
+import poster6 from "../img/main/총동연.jpg"
+import poster7 from "../img/main/별헤는밤.jpg";
+import poster8 from "../img/main/설화.jpg";
+import poster9 from "../img/main/정음.jpg";
+import poster10 from "../img/main/차일드.jpg";
+import poster11 from "../img/main/히바.jpg";
 
 const originalImages = [
     { id: 1, src: poster1 },
@@ -26,6 +27,7 @@ const originalImages = [
     { id: 8, src: poster8 },
     { id: 9, src: poster9 },
     { id: 10, src: poster10 },
+    { id: 11, src: poster11 }
 ];
 
 // 🔥 앞뒤에 복사본 추가 (무한 루프처럼 보이게 하기 위함)

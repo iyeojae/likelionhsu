@@ -69,7 +69,7 @@ const CategoriesNav = ({ categories }) => {
 
     const formatContent = (text) => {
         return text.split("\n").map((line, index) => {
-            const boldKeywords = ["활동내용", "동아리 소개", "문의", "챌린지 소개", "참여 방법", "동아리 장점"];
+            const boldKeywords = ["활동내용", "동아리 소개", "문의", "챌린지 소개", "참여 방법", "동아리 장점", "모집 관련 정보"];
             const boldLine = boldKeywords.find((keyword) => line.includes(keyword));
 
             const formattedLine = line.split(/(https?:\/\/[^\s]+)/g).map((part, i) => {
