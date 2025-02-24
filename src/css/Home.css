@@ -91,17 +91,7 @@
     position: relative;
 }
 
-
-.bottom-txt {
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #0000004D;
-}
-
 .carousel-box {
-    max-width: 430px;
+    max-width: 100%;
+    margin: 0 auto;
 }

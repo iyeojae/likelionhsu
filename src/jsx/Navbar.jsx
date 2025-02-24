@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import logo from "../img/logo.png";
 import map from "../img/map.png";
 import perform from "../img/perform.png";
@@ -13,9 +16,9 @@ import "../css/Navbar.css";
 
 const navItems = [
     { id: 1, name: "지도", icon: map, link: "/map" },
-    { id: 2, name: "공연", icon: perform, link: "/perform" },
+    { id: 2, name: "학술", icon: education, link: "/education" },
     { id: 3, name: "봉사", icon: volunteer, link: "/volunteer" },
-    { id: 4, name: "학술", icon: education, link: "/education" },
+    { id: 4, name: "공연", icon: perform, link: "/perform" },
     { id: 5, name: "체육", icon: gym, link: "/gym" },
     { id: 6, name: "종교", icon: religion, link: "/religion" },
     { id: 7, name: "취미", icon: hobby, link: "/hobby" },
@@ -25,65 +28,51 @@ const navItems = [
 const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const iconScrollRef = useRef(null);
-    const nameScrollRef = useRef(null);
+    const iconSliderRef = useRef(null);
 
-    // 스크롤 동기화 함수
-    const syncScroll = (source) => {
-        if (!iconScrollRef.current || !nameScrollRef.current) return;
-
-        requestAnimationFrame(() => {
-            if (source === "icons") {
-                const newScrollLeft = iconScrollRef.current.scrollLeft;
-                if (Math.abs(nameScrollRef.current.scrollLeft - newScrollLeft) > 1) {
-                    console.log("Before Update (Icons -> Names):", nameScrollRef.current.scrollLeft);
-                    nameScrollRef.current.scrollLeft = newScrollLeft;
-                    console.log("After Update (Icons -> Names):", nameScrollRef.current.scrollLeft);
-                }
-            } else if (source === "names") {
-                const newScrollLeft = nameScrollRef.current.scrollLeft;
-                if (Math.abs(iconScrollRef.current.scrollLeft - newScrollLeft) > 1) {
-                    console.log("Before Update (Names -> Icons):", iconScrollRef.current.scrollLeft);
-                    iconScrollRef.current.scrollLeft = newScrollLeft;
-                    console.log("After Update (Names -> Icons):", iconScrollRef.current.scrollLeft);
-                }
-            }
-        });
+    const navbarSettings = {
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        swipeToSlide: true,
+        variableWidth: true,
+        accessibility: false,
     };
 
     return (
         <div className="navbar-container">
             <div className="nav-container">
                 {/* 로고 */}
-                <img src={logo} alt="logo" className="logo" onClick={() => navigate("/")} style={{ cursor: "pointer" }} />
+                <div className="logo-container" onClick={() => navigate("/")}
+                    style={{display: "flex", flexDirection: "row", gap: "10px", alignItems: "center"}}>
+                    <img src={logo} alt="logo" className="logo" style={{cursor: "pointer"}}/>
+                    <p style={{margin: "0", padding: "0", height: "45px", display: "flex", alignItems: "center"}}>
+                        LIKE LION
+                    </p>
+                </div>
 
-                {/* 네비게이션 래퍼 */}
+
+                {/* 아이콘 슬라이드 */}
                 <div className="nav-scroll-wrapper">
-                    {/* 아이콘 네비게이션 */}
-                    <div className="nav-icon-cont" ref={iconScrollRef} onScroll={() => syncScroll("icons")}>
-                        <nav className="nav-grid">
-                            {navItems.map((item) => (
-                                <Link key={item.id} to={item.link} className="nav-item">
-                                    <img src={item.icon} alt={item.name} className={`icon ${location.pathname === item.link ? "active" : ""}`} />
+                    <Slider ref={iconSliderRef} {...navbarSettings} className="nav-icon-cont">
+                        {navItems.map((item) => (
+                            <div key={item.id} className="nav-slide">
+                                <Link to={item.link} className="nav-item">
+                                    <img src={item.icon} alt={item.name}
+                                        className={`icon ${location.pathname === item.link ? "active" : ""}`}/>
+                                    <p className="nav-name">{item.name}</p>
                                 </Link>
-                            ))}
-                        </nav>
-                    </div>
-
-                    {/* 네비게이션 이름 */}
-                    <div className="nav-name-cont" ref={nameScrollRef} onScroll={() => syncScroll("names")}>
-                        <div className="nav-name" style={{ display: location.pathname === "/" ? "flex" : "none" }}>
-                            {navItems.map((item) => (
-                                <p key={item.id}>{item.name}</p>
-                            ))}
-                        </div>
-                    </div>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </div>
     );
 };
-
 export default Navbar;
 
 

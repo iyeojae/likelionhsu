@@ -13,7 +13,7 @@ const Religion = () => {
                     <CategoriesNav categories={religionCategories}/>
 
                     <div className="Footer-container">
-                        <Footer/>
+                    <Footer style={{ backgroundColor: "#E5F1F5", display: "flex", textAlign: "center", zIndex: "3"}}/>
                     </div>
                 </div>
             </div>

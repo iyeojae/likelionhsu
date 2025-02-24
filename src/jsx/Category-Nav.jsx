@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Slider from "react-slick"; 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import like from '../img/like.png';
 import likefill from '../img/likefill.png';
 
 const CategoriesNav = ({ categories }) => { 
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [liked, setLiked] = useState(false);
-    const [clickCount, setClickCount] = useState(0); 
-    const [isAnimate, setIsAnimate] = useState(false);
+    const [clickCount, setClickCount] = useState(0); // click like img for counting
+    const [isAnimate, setIsAnimate] = useState(false);// animation
 
     // ✅ 좋아요 수 및 상태 가져오기
     useEffect(() => {
@@ -74,15 +77,16 @@ const CategoriesNav = ({ categories }) => {
 
             const formattedLine = line.split(/(https?:\/\/[^\s]+)/g).map((part, i) => {
                 if (part.match(/https?:\/\/[^\s]+/)) {
-                    let linkText = "링크 바로가기";
+                    let linkText = "링크 바로가기"; // 기본값
 
                     if (part.includes("instagram.com")) {
                         linkText = "📸 인스타그램 바로가기";
-                    } else if (part.includes("youtube.com")) {
-                        linkText = "▶️ 유튜브 바로가기";
                     } else if (part.includes("kakao.com")) {
                         linkText = "💬 카카오톡 바로가기";
+                    } else if (part.includes("everytime.kr")) {
+                        linkText = "💬 에브리타임 바로가기";
                     }
+
 
                     return (
                         <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: "#5e5e5e", fontWeight: "bold" }}>
@@ -101,26 +105,53 @@ const CategoriesNav = ({ categories }) => {
         });
     };
 
+    const categorySliderSettings = { // Category's nav slide setting
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3, // 한 번에 보이는 카테고리 개수
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        swipeToSlide: true,
+        variableWidth: true,
+        accessibility: false,
+    };
+
     return (
-        <div className="Categories">
+        <div className="Categories"> {/* nav - button */}
             <div className="category-nav-container">
-                <nav className="category-nav">
+            <Slider {...categorySliderSettings} className="category-nav-slider">
                     {categories.map((item) => (
-                        <li key={item.id} onClick={() => handleCategoryClick(item)}
-                            style={{ cursor: "pointer",
-                                fontSize: selectedCategory.id === item.id ? "15px" : "13px",
-                                fontWeight: selectedCategory.id === item.id ? "bolder" : "500",
-                                color: selectedCategory.id === item.id ? "white" : "black",
-                                backgroundColor: selectedCategory.id === item.id ? "black" : "white",
-                                transition: "0.3s ease-in-out",
-                            }}>
-                            {item.name}
-                        </li>
+                        <div key={item.id} className="category-slide" onClick={() => handleCategoryClick(item)} tabIndex="-1">
+                            <div
+                                style={{
+                                    cursor: "pointer",
+                                    fontSize: selectedCategory.id === item.id ? "13.5px" : "11.5px",
+                                    fontWeight: selectedCategory.id === item.id ? "bolder" : "500",
+                                    color: selectedCategory.id === item.id ? "white" : "black",
+                                    backgroundColor: selectedCategory.id === item.id ? "black" : "white",
+                                    transition: "0.3s ease-in-out",
+                                    borderRadius: "25px",
+                                    padding: "2px 3px",
+                                    border: "1.5px solid black",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    minWidth: "100px",
+                                    maxWidth: "120px",
+                                    height: "30px",
+                                    textAlign: "center",
+                                    margin: "10px"
+                                }}
+                            >
+                                {item.name}
+                            </div>
+                        </div>
                     ))}
-                </nav>
+                </Slider>
             </div>
 
-            <div className="txt-container-main">
+            <div className="txt-container-main"> {/* name, detail ( middle ) */}
                 <div className="cate-intro">
                     <img src={selectedCategory.icon} alt={selectedCategory.name} className="cate-intro-image" />
                     <div className="cate-intro-text">
@@ -152,19 +183,25 @@ const CategoriesNav = ({ categories }) => {
             <div className="Category-Content-container">
                 <div className="Category-Content">
                     <h1>{selectedCategory.name}
-                        <br />
+                        <br/>
                         <span>{selectedCategory.detail}</span>
                     </h1>
 
                     {/* if img is null, display none */}
                     <div className="content-img">
                         {selectedCategory.img && (
-                            <img src={selectedCategory.img} alt={selectedCategory.name} />
+                            <img src={selectedCategory.img} alt={selectedCategory.name}/>
                         )}
                     </div>
 
                     {/* `selectedCategory.content`에서 특정 키워드만 굵게 처리 + URL 자동 변환 */}
-                    <div>{formatContent(selectedCategory.content)}</div>
+                    <div>{formatContent(selectedCategory.content1)}</div>
+                    {["active1", "active2", "active3"].map((key)=> (
+                        selectedCategory[key] && (
+                            <img key={key} src={selectedCategory[key]} alt={'active-${key}'}/>
+                        )
+                    ))}
+                    <div>{formatContent(selectedCategory.content2)}</div>
                 </div>
             </div>
         </div>
