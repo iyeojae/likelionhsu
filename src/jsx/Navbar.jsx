@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="nav-container">
 {/* 로고 */}
 <div className="logo-container" onClick={() => navigate("/")}
-    style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center", marginLeft:"90px"}}>
+    style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center", marginLeft:"92px"}}>
     <img src={logo} alt="logo" className="logo" style={{ cursor: "pointer", height: "45px" }} />
     <p style={{
         margin: "0",
