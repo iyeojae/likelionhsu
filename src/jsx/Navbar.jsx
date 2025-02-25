@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="nav-container">
 {/* 로고 */}
 <div className="logo-container" onClick={() => navigate("/")}
-    style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center", marginLeft:"120px"}}>
+    style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center", marginLeft:"90px"}}>
     <img src={logo} alt="logo" className="logo" style={{ cursor: "pointer", height: "45px" }} />
     <p style={{
         margin: "0",
@@ -61,7 +61,6 @@ const Navbar = () => {
         LIKELION HSU
     </p>
 </div>
-
 
 
                 {/* 아이콘 슬라이드 */}
