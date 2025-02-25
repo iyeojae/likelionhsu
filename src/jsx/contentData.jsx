@@ -60,7 +60,7 @@ import Iconchild from '../img/volunteer/volun.png';
 import Imgchild from '../img/intro/13.png';
 
 import Icongalaxy from '../img/hobby/galaxy.png';
-import Imggalaxy from '../img/intro/35.jpg';
+import Imggalaxy from '../img/intro/36.png';
 import Iconcube from '../img/hobby/cube.png';
 /*import Imgcube from '../img/intro/2.jpg';*/
 import Iconsigol from '../img/hobby/sigol.png';
@@ -818,15 +818,15 @@ export const hobbyCategories = [
         id: 30,
         name: "별헤는밤",
         detail: "천체관측 동아리",
-        short: "별이 빛나는 밤, 천체를 탐구하는\n한서대 유일 천체관측 동아리!",
+        short: "별과 우주를 사랑하는 \n사람들의 모임",
         img: Imggalaxy,
         icon:Icongalaxy,
         content: "\n" +
             "동아리 소개\n" +
-            "'별헤는밤'은 한서대학교에서 유일한 천체관측 동아리로, 밤하늘을 사랑하는 학우들이 모여 별과 우주의 신비를 함께 경험하는 공간입니다. 태안캠퍼스를 중심으로 다양한 천체관측 활동을 진행하며, 서산캠퍼스 학생들도 카풀을 통해 참여 가능합니다." +
+            "\"별헤는 밤\"은 한서대학교의 대표적인 천체관측 동아리로, 굴절·반사 망원경을 활용해 다양한 천체를 관측하고 학습하는 모임입니다. 2023년 설립 이후, 별자리 학습, 우주 세미나, 천체관측을 통해 우주항공에 대한 이해를 넓히고 있습니다." +
             "\n" +
             "활동내용\n" +
-            "💫 캠퍼스 국지관측 – 망원경과 육안으로 캠퍼스 내에서 별을 관측하는 낭만적인 시간\n💫 천문대 방문– 보다 전문적인 장비로 우주를 깊이 탐구하는 기회 제공\n💫 원정 관측– 학기 중 주말, 은하수가 빼곡한 명소로 1박 2일 원정관측\n💫 MT 및 친목 활동 – 회식, MT 등 학우들과의 친목을 다지는 다양한 이벤트\n\n" +
+            "💫 정기 관측: 서산·태안캠퍼스에서 별과 행성, 성운, 성단 등을 관측\n💫 천문대 견학: 대한민국 최서단 태안군에 위치한 \"별똥별 천문대\" 견학 및 심화 학습\n💫 원정 관측: 타 지역으로 이동하여 천체 관측 경험 확대\n💫 연합 관측: 타 대학 천체관측 동아리와 공동 관측 행사 개최\n💫교류 활동: MT, 친목 모임 등을 통한 회원 간 유대 강화\n올해부터 서산캠퍼스에서도 정기 관측을 진행하며, 보다 폭넓은 천체관측 기회를 제공할 예정입니다.\n " +
             "☎️문의☎️\n" +
             "https://www.instagram.com/hsu_starrynight/"+
             "\n🤟모집 관련 정보🤟\n"+
