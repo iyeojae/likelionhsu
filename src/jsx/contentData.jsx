@@ -110,7 +110,6 @@ import activityballader1 from '../img/activity/발라더1.jpg';
 import activityballader2 from '../img/activity/발라더2.jpg';
 import activityballader3 from '../img/activity/발라더3.jpg';
 
-import activitylight1 from '../img/activity/빛감1.jpg';
 import activitylight2 from '../img/activity/빛감2.jpg';
 import activitylight3 from '../img/activity/빛감3.jpg';
 import activitylight4 from '../img/activity/빛감4.jpg';
