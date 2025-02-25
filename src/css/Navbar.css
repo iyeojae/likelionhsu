@@ -73,3 +73,8 @@
     padding-top: 5px;
 }
 
+.nav-item:focus,
+.nav-item img:focus {
+    outline: none;
+    border: none;
+}
