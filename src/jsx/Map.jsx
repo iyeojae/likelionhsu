@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "./Footer";
 import '../css/Map.css';
 import inform from '../img/inform_new.png';
-import instagram from "../img/instagram.png"; // add
 
 const Map = () => {
     return (
@@ -23,24 +22,6 @@ const Map = () => {
                         <p>취미부터 커리어까지, 내게 맞는 동아리를 찾아보세요!</p>
                     </div>
                 </div>
-                {/* add*/}
-                <div className="club-instagram-container" style={{width: "60%", margin: "0 auto", height:"40px"}}>
-                        <div className="club-instagram" style={{
-                            textAlign: "center",
-                            marginTop: "35px",
-                            fontSize: "14px",
-                            fontWeight: "bold",
-                            display: "flex",
-                            flexDirectionx: "row",
-                            gap: "15px"
-                        }}>
-                            제32대 총동아리연합회 공명정대
-                            <a href="https://www.instagram.com/hsu_gmjd32th/" style={{display: "inline-block"}}>
-                                <img src={instagram} alt="instagram"
-                                    style={{width: "20px", height: "20px", margin: "０"}}/>
-                            </a>
-                        </div>
-                    </div>
 
                 <div className="map-cont">
                     <img src={inform} alt="inform"></img>
