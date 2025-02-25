@@ -13,7 +13,7 @@ const Hobby = () => {
                     <CategoriesNav categories={hobbyCategories}/>
 
                     <div className="Footer-container">
-                        <Footer/>
+                    <Footer/>
                     </div>
                 </div>
             </div>

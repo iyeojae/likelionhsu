@@ -13,7 +13,7 @@ const Religion = () => {
                     <CategoriesNav categories={religionCategories}/>
 
                     <div className="Footer-container">
-                        <Footer/>
+                    <Footer/>
                     </div>
                 </div>
             </div>

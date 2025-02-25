@@ -1,104 +1,61 @@
-.carousel-wrapper {
-    width: 70%;
-    margin: 0 auto;
+.slider-container {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    height: 204px;
+}
+
+.carousel-item {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden
-}
-
-.carousel-track {
-    display: flex;
-    align-items: center;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-container-btm {
-    margin: 0;
-}
-
-.carousel-item img {
-    width: 105px;
-    height: 148px;
-    object-fit: fill;
-}
-
-.carousel-item.active {
-    width: 147px;
-    height: 208px;
-    object-fit: fill;
 }
 
 
-/*.carousel-item {
-    width: 105px;
-    height: 148px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0.7;
-    transform: scale(0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-!* 이미지 스타일 *!
-.carousel-item img {
-    width: 147px;
-    height: 208px;
+.carousel-image {
+    width: 114px;
+    height: 161px;
     object-fit: cover;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-!* 중앙 이미지 스타일 *!
-.carousel-item.active {
-    width: 147px;
-    height: 208px;
-    opacity: 1;
-    transform: scale(1.2);
-    z-index: 5;
-}*/
 
+.slick-center .carousel-image {
+    width: 160px !important;
+    height: 226px !important;
+    position: relative;
+    z-index: 2;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.5);
+}
 
-.slick-list {
-    display: flex !important; /* 슬라이드가 가로 정렬되도록 변경 */
+.slick-slide:not(.slick-center) .carousel-image {
+    position: relative;
+    align-self: center;
+}
+
+/* 양 옆 이미지 정렬 */
+.slick-slide {
+    display: flex !important;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* 필요하면 조정 */
-    position: relative !important;
 }
 
-.slick-track {
-    width: 400px !important;
-    align-items: center;
-    justify-content: center;
-    display: flex !important; /* 슬라이드 내부 트랙도 가로 정렬 */
-    margin: 0;
-    padding: 0;
-}
-
-.slick-center {
-    transform: scale(1.2) !important; /* ✅ 중앙에 위치한 슬라이드만 확대 */
-    opacity: 1 !important;
-    z-index: 5;
+/* 양 옆 슬라이드 -> 중앙과 같은 y에 오도록 조정 */
+.slick-slide:not(.slick-center) .carousel-image {
+    top: 50%;
+    transform: translateY(10%);
+    z-index: 1;
 }
 
 .slick-slide {
-    display: flex !important; /* 개별 슬라이드도 가로 정렬 */
-    justify-content: center;
-    align-items: center;
-    width: 140px !important; /* 슬라이드 크기 강제 */
-    height: 220px !important;
-    flex-shrink: 0;
-    margin: 0 5px !important;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0.7;
+    outline: none !important;
 }
 
-.slick-slide[aria-hidden="true"] {
-    pointer-events: none; /* ✅ 포커스 방지 */
+.slick-slide:focus,
+.slick-slide:active {
+    outline: none !important;
 }
-
 
 
 
