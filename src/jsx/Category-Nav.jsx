@@ -155,7 +155,7 @@ const CategoriesNav = ({ categories }) => {
                 <div className="cate-intro">
                     <img src={selectedCategory.icon} alt={selectedCategory.name} className="cate-intro-image" />
                     <div className="cate-intro-text">
-                        <h2>{selectedCategory.name}<br /><span>{selectedCategory.detail}</span></h2>
+                        <h2 style={{fontSize:"27px", fontWeight:"bold"}}>{selectedCategory.name}<br /><span>{selectedCategory.detail}</span></h2>
                     </div>
                 </div>
 
