@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import '../css/Map.css';
 import inform from '../img/inform_new.png';
+import main from '../img/main.png';
 
 const Map = () => {
     return (
@@ -9,6 +10,7 @@ const Map = () => {
             <div className="container">
                 <div className="txt-cont">
                     <div className="main-intro">
+                    <img src={main} alt="main" className="main-intro-img" />
                         <div className="main-intro-txt">
                             <h2>2025</h2>
                             <h4>Hanseo University</h4>
