@@ -15,7 +15,7 @@ const rolls = [
                 <div className="footer-top"
                     style={{display: "flex", justifyContent: "space-between", flexDirection: "row"}}>
                     <p style={{margin: "0"}}>| 제32대 총동아리연합회 공명정대</p>
-                    <a href="https://www.instagram.com/likelion_hsu?igsh=NG5uNWQ1OHV4aWVr">
+                    <a href="https://www.instagram.com/hsu_gmjd32th/">
                         <img src={instagram} alt="instagram" style={{width: "20px", height: "20px"}}></img>
                     </a>
                 </div>
