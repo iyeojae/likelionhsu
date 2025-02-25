@@ -179,31 +179,45 @@ const CategoriesNav = ({ categories }) => {
                     </div>
                 </div>
             </div>
-
             <div className="Category-Content-container">
-                <div className="Category-Content">
-                    <h1>{selectedCategory.name}
-                        <br/>
-                        <span>{selectedCategory.detail}</span>
-                    </h1>
+    <div className="Category-Content">
+        <h1>{selectedCategory.name}
+            <br />
+            <span>{selectedCategory.detail}</span>
+        </h1>
 
-                    {/* if img is null, display none */}
-                    <div className="content-img">
-                        {selectedCategory.img && (
-                            <img src={selectedCategory.img} alt={selectedCategory.name}/>
-                        )}
-                    </div>
+        {/* 이미지가 없으면 display: none 처리 */}
+        <div className="content-img">
+            {selectedCategory.img && (
+                <img src={selectedCategory.img} alt={selectedCategory.name} />
+            )}
+        </div>
 
-                    {/* `selectedCategory.content`에서 특정 키워드만 굵게 처리 + URL 자동 변환 */}
-                    <div>{formatContent(selectedCategory.content1)}</div>
-                    {["active1", "active2", "active3"].map((key)=> (
-                        selectedCategory[key] && (
-                            <img key={key} src={selectedCategory[key]} alt={'active-${key}'}/>
-                        )
-                    ))}
-                    <div>{formatContent(selectedCategory.content2)}</div>
-                </div>
-            </div>
+        {/* `content1`이 있으면 먼저 처리 */}
+        {selectedCategory.content1 && (
+            <div>{formatContent(selectedCategory.content1)}</div>
+        )}
+
+        {/* `active1`, `active2`, `active3` 이미지들 처리 */}
+        {["active1", "active2", "active3"].map((key) => (
+            selectedCategory[key] && (
+                <img key={key} src={selectedCategory[key]} alt={`active-${key}`} />
+            )
+        ))}
+
+        {/* `content2`가 있을 경우 그 후에 처리 */}
+        {selectedCategory.content2 && (
+            <div>{formatContent(selectedCategory.content2)}</div>
+        )}
+
+        {/* `content`가 있을 경우 하나만 처리 (content1, content2가 없을 경우) */}
+        {selectedCategory.content && !selectedCategory.content1 && !selectedCategory.content2 && (
+            <div>{formatContent(selectedCategory.content)}</div>
+        )}
+    </div>
+</div>
+
+
         </div>
     );
 };

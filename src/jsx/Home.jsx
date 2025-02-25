@@ -114,7 +114,7 @@ const Home = () => {
                     <div className="carousel-container-btm">
                         <div className="carousel-box">
                             <Carousel/>
-                            <Footer style={{ backgroundColor: "#E5F1F5", display: "flex", textAlign: "center", zIndex: "3"}}/>
+                            <Footer/>
                         </div>
                     </div>
                 </div>

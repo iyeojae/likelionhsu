@@ -8,9 +8,9 @@ const rolls = [
         {role: "PM", names: ["최지인"]},
     ]
 
-    const Footer = ({style}) => {
-    return ( //
-        <div className="footer" style={style}>
+    const Footer = () => {
+    return ( 
+        <div className="footer" style={{ backgroundColor: "#E5F1F5", borderTopRightRadius: "100%", borderTopLeftRadius: "100%", paddingTop: " 70px", display: "flex", textAlign: "center"}}>
             <footer className="footer-msg" style={{width: "300px", margin: "0 auto", fontSize: "13px", color: "rgba(0, 0, 0, 0.7)"}}>
                 <div className="footer-top"
                     style={{display: "flex", justifyContent: "space-between", flexDirection: "row"}}>

@@ -13,7 +13,7 @@ const Art = () => {
                     <CategoriesNav categories={artCategories}/>
 
                     <div className="Footer-container">
-                    <Footer style={{ backgroundColor: "#E5F1F5", display: "flex", textAlign: "center", zIndex: "3"}}/>
+                    <Footer/>
                     </div>
                 </div>
             </div>

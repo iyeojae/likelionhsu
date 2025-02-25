@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import '../css/Map.css';
 import inform from '../img/inform_new.png';
+import instagram from "../img/instagram.png"; // add
 
 const Map = () => {
     return (
@@ -14,6 +15,7 @@ const Map = () => {
                             <h4>Hanseo University</h4>
                             <h3>동아리 박람회</h3>
                             <p>2025.03.05.wed</p>
+                            <p>11:00 ~ 16:00</p>
                         </div>
                     </div>
 
@@ -21,6 +23,24 @@ const Map = () => {
                         <p>취미부터 커리어까지, 내게 맞는 동아리를 찾아보세요!</p>
                     </div>
                 </div>
+                {/* add*/}
+                <div className="club-instagram-container" style={{width: "60%", margin: "0 auto", height:"40px"}}>
+                        <div className="club-instagram" style={{
+                            textAlign: "center",
+                            marginTop: "35px",
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            display: "flex",
+                            flexDirectionx: "row",
+                            gap: "15px"
+                        }}>
+                            제32대 총동아리연합회 공명정대
+                            <a href="https://www.instagram.com/hsu_gmjd32th/" style={{display: "inline-block"}}>
+                                <img src={instagram} alt="instagram"
+                                    style={{width: "20px", height: "20px", margin: "０"}}/>
+                            </a>
+                        </div>
+                    </div>
 
                 <div className="map-cont">
                     <img src={inform} alt="inform"></img>
@@ -29,7 +49,7 @@ const Map = () => {
 
                 <div className="perfor-cont">
                     <div className="perfor-club">
-                        <h5>보컬동아리 "발라더" 공연 정보</h5>
+                        <h5>보컬동아리 "발라더" 버스킹 정보</h5>
                         <p>12시~13시</p>
                     </div>
                     <div className="perfor-song"><p>1. 바보에게 바보가 - 이석훈</p></div>

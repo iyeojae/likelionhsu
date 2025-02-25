@@ -45,14 +45,23 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <div className="nav-container">
-                {/* 로고 */}
-                <div className="logo-container" onClick={() => navigate("/")}
-                    style={{display: "flex", flexDirection: "row", gap: "10px", alignItems: "center"}}>
-                    <img src={logo} alt="logo" className="logo" style={{cursor: "pointer"}}/>
-                    <p style={{margin: "0", padding: "0", height: "45px", display: "flex", alignItems: "center"}}>
-                        LIKE LION
-                    </p>
-                </div>
+{/* 로고 */}
+<div className="logo-container" onClick={() => navigate("/")}
+    style={{ display: "flex", flexDirection: "row", gap: "10px", alignItems: "center", marginLeft:"120px"}}>
+    <img src={logo} alt="logo" className="logo" style={{ cursor: "pointer", height: "45px" }} />
+    <p style={{
+        margin: "0",
+        padding: "0",
+        fontSize: "20px",
+        fontWeight: "bold",
+        whiteSpace: "nowrap", // 텍스트가 한 줄 유지되도록 설정
+        display: "flex",
+        alignItems: "center"
+    }}>
+        LIKELION HSU
+    </p>
+</div>
+
 
 
                 {/* 아이콘 슬라이드 */}

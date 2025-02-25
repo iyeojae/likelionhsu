@@ -60,7 +60,7 @@ import Iconchild from '../img/volunteer/volun.png';
 import Imgchild from '../img/intro/13.png';
 
 import Icongalaxy from '../img/hobby/galaxy.png';
-/*import Imggalaxy from '../img/intro/1.jpg';*/
+import Imggalaxy from '../img/intro/35.jpg';
 import Iconcube from '../img/hobby/cube.png';
 /*import Imgcube from '../img/intro/2.jpg';*/
 import Iconsigol from '../img/hobby/sigol.png';
@@ -71,7 +71,7 @@ import Imgyeoun from '../img/intro/31.jpg';
 import Iconpallete from '../img/art/pallete.png';
 /*import Imgpallete from '../img/intro/1.jpg';*/
 import Iconphoto from '../img/art/photo.png';
-/*import Imgphoto from '../img/intro/2.jpg';*/
+import Imgphoto from '../img/intro/34.jpg';
 
 import Iconkoi from '../img/religion/koi.png';
 import Imgkoi from '../img/intro/33.jpg';
@@ -84,8 +84,8 @@ import Imgbudda from '../img/intro/3.png';*/
 
 
 // activity
-import activityccc1 from '../img/activity/ccc1.jpg';
-import activityccc2 from '../img/activity/ccc2.jpg';
+import activityccc1 from '../img/activity/CCC1.jpg';
+import activityccc2 from '../img/activity/CCC2.jpg';
 
 import activitynabi1 from '../img/activity/나비1.jpg';
 import activitynabi2 from '../img/activity/나비2.jpg';
@@ -113,37 +113,38 @@ import activityballader3 from '../img/activity/발라더3.jpg';
 import activitylight1 from '../img/activity/빛감1.jpg';
 import activitylight2 from '../img/activity/빛감2.jpg';
 import activitylight3 from '../img/activity/빛감3.jpg';
+import activitylight4 from '../img/activity/빛감4.jpg';
 
 import activitysulhwa1 from '../img/activity/설화1.jpg';
 import activitysulhwa2 from '../img/activity/설화2.jpg';
 import activitysulhwa3 from '../img/activity/설화3.jpg';
 
-import activitySigeol1 from '../image/activity/시골풍경1.jpg';
-import activitySigeol2 from '../image/activity/시골풍경2.jpg';
-import activitySigeol3 from '../image/activity/시골풍경3.jpg';
+import activitySigeol1 from '../img/activity/시골풍경1.jpg';
+import activitySigeol2 from '../img/activity/시골풍경2.jpg';
+import activitySigeol3 from '../img/activity/시골풍경3.jpg';
 
-import activityJeongeum1 from '../image/activity/정음1.jpg';
-import activityJeongeum2 from '../image/activity/정음2.jpg';
-import activityJeongeum3 from '../image/activity/정음3.jpg';
+import activityJeongeum1 from '../img/activity/정음1.jpg';
+import activityJeongeum2 from '../img/activity/정음2.jpg';
+import activityJeongeum3 from '../img/activity/정음3.jpg';
 
-import activityCurtainCall1 from '../image/activity/커튼콜1.jpg';
-import activityCurtainCall2 from '../image/activity/커튼콜2.jpg';
-import activityCurtainCall3 from '../image/activity/커튼콜3.jpg';
+import activityCurtainCall1 from '../img/activity/커튼콜1.jpg';
+import activityCurtainCall2 from '../img/activity/커튼콜2.jpg';
+import activityCurtainCall3 from '../img/activity/커튼콜3.jpg';
 
-import activityKoinonia1 from '../image/activity/코이노니아1.jpg';
-import activityKoinonia2 from '../image/activity/코이노니아2.jpg';
-import activityKoinonia3 from '../image/activity/코이노니아3.jpg';
+import activityKoinonia1 from '../img/activity/코이노니아1.jpg';
+import activityKoinonia2 from '../img/activity/코이노니아2.jpg';
+import activityKoinonia3 from '../img/activity/코이노니아3.jpg';
 
-import activityTaeTae1 from '../image/activity/태태1.jpg';
-import activityTaeTae2 from '../image/activity/태태2.jpg';
+import activityTaeTae1 from '../img/activity/태태1.jpg';
+import activityTaeTae2 from '../img/activity/태태2.jpg';
 
-import activityPalette1 from '../image/activity/팔레트1.jpg';
-import activityPalette2 from '../image/activity/팔레트2.jpg';
-import activityPalette3 from '../image/activity/팔레트3.jpg';
+import activityPalette1 from '../img/activity/팔레트1.jpg';
+import activityPalette2 from '../img/activity/팔레트2.jpg';
+import activityPalette3 from '../img/activity/팔레트3.jpg';
 
-import activityHiba1 from '../image/activity/히바1.jpg';
-import activityHiba2 from '../image/activity/히바2.jpg';
-import activityHiba3 from '../image/activity/히바3.jpg';
+import activityHiba1 from '../img/activity/히바1.jpg';
+import activityHiba2 from '../img/activity/히바2.jpg';
+import activityHiba3 from '../img/activity/히바3.jpg';
 
 
 
@@ -393,7 +394,7 @@ export const gymCategories = [
         short:"열정 가득한 농구 동아리\n실력보다 함께 즐기는 농구가 더 중요한 MOVE!",
         img: Imgmove,
         icon: Iconbasket,
-        content: "동아리 소개" +
+        content1: "동아리 소개\n" +
             "2014년부터 활동을 시작한 한서대학교 농구동아리 MOVE는 여러 대회에 출전하며 입상한 경험이 있는 농구 동아리입니다. 실력보다 농구를 함께 즐기고 싶은 열정적인 사람들을 환영하는 동아리로, 초보자도 숙련자도 모두 함께할 수 있는 따뜻한 공간입니다.\n" +
             "\n" +
             "활동내용\n" +
@@ -791,7 +792,7 @@ export const artCategories = [
         name: "빛감",
         detail: "사진 동아리",
         short: "빛으로 순간을 담는 사진 동아리\n빛감에서 부원 모집!",
-        img: /*Imgphoto*/"",
+        img: Imgphoto,
         icon: Iconphoto,
         content1: ""+"동아리 소개\n" +
             "빛감은 사진과 영상에 관심 있는 학우들이 모여 함께 촬영하고 추억을 공유하는 한서대학교 사진 동아리입니다. 인물, 풍경, 컨셉 촬영 등 다양한 스타일의 사진을 경험하며, 사진을 찍거나 찍히는 것을 좋아하는 누구나 환영합니다.\n" +
@@ -802,9 +803,9 @@ export const artCategories = [
             "📷 사진 보정법 공유 및 스터디\n" +
             "📷 MT 및 다양한 친목 활동\n" +
             "\n" ,
-            active1:activityPalette1,
-            active2:activityPalette2,
-            active3:activityPalette3,
+            active1:activitylight4,
+            active2:activitylight2,
+            active3:activitylight3,
             content2:"☎️문의☎️\n" +
             "https://www.instagram.com/lightpainters_hsu\n"+
                         "\n🤟모집 관련 정보🤟\n"+
@@ -819,7 +820,7 @@ export const hobbyCategories = [
         name: "별헤는밤",
         detail: "천체관측 동아리",
         short: "별이 빛나는 밤, 천체를 탐구하는\n한서대 유일 천체관측 동아리!",
-        img: /*Imggalaxy*/"",
+        img: Imggalaxy,
         icon:Icongalaxy,
         content: "\n" +
             "동아리 소개\n" +
@@ -884,9 +885,9 @@ export const hobbyCategories = [
             "활동내용\n" +
             "\n" +
             "🧳 국내 여행 – 한서대 학우들과 함께 떠나는 소규모·대규모 여행\n🧳 MT 및 캠핑 – 자연 속에서 즐기는 힐링 여행\n🧳 테마 여행 – 계절별 특색 있는 여행 기획 (예: 벚꽃 여행, 가을 단풍 여행)\n🧳 소모임 활동 – 관심사별 소규모 여행 모임 운영\n",
-            active1:activityPalette1,
-            active2:activityPalette2,
-            active3:activityPalette3,
+            active1:activitySigeol1,
+            active2:activitySigeol2,
+            active3:activitySigeol3,
             content2:"☎️문의☎️\n" +
             "https://www.instagram.com/sigol_moment?igsh=OTNjOHY3aWI5OG04"+
             "\n🤟모집 관련 정보🤟\n"+
@@ -908,9 +909,9 @@ export const religionCategories = [
             "코이노니아는 한서대학교에서 유일한 천주교 동아리로, 대가대협 천안지구에 소속되어 있습니다. 타 대학의 천주교 동아리들과 교류하며 연합 미사 및 다양한 신앙 활동을 통해 따뜻한 공동체를 형성하고 있습니다. 신앙이 있는 학생뿐만 아니라 성당에 관심 있는 학생들도 언제든지 함께할 수 있습니다.\n" +
             "활동내용\n" +
             "⛪ 정기 미사 및 모임 – 교내에서 정기 미사를 드리며, 미사 후에는 함께 교류하는 시간을 가집니다.\n⛪ MT 및 단체 봉사활동 – 동아리원들과 친목을 다지는 MT와 다양한 봉사활동을 진행합니다.\n⛪성지순례 – 신앙의 의미를 되새길 수 있는 성지순례를 계획하고 있습니다.\n⛪ 대가대협 행사 참여 – 대가대협(대학 가톨릭 대협의회) 주최 행사에 참여하여 다른 대학 신자들과 교류할 수 있습니다.\n" ,
-            active1:activityPalette1,
-            active2:activityPalette2,
-            active3:activityPalette3,
+            active1:activityKoinonia1,
+            active2:activityKoinonia2,
+            active3:activityKoinonia3,
             content2:"☎️문의☎️\n" +
             "https://open.kakao.com/o/sPvgJ8cg\n" +
             "https://www.instagram.com/koinoniaaa_/\n"
@@ -929,9 +930,8 @@ export const religionCategories = [
             "✝️  매주 화요일 홍성지역에 있는 4개의 캠퍼스 연합 채플\n" +
             "✝️ 방학기간 전국CCC 여름, 겨울수련회 참여\n" +
             "\n" ,
-            active1:activityPalette1,
-            active2:activityPalette2,
-            active3:activityPalette3,
+            active1:activityccc1,
+            active2:activityccc2,
             content2:"☎️문의☎️\n" +
             "010-5453-0895\n" +
             "https://www.instagram.com/hongseong_ccc/"
