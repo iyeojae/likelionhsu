@@ -933,7 +933,9 @@ export const religionCategories = [
             active2:activityccc2,
             content2:"☎️문의☎️\n" +
             "010-5453-0895\n" +
-            "https://www.instagram.com/hongseong_ccc/"
+            "https://www.instagram.com/hongseong_ccc/"+
+            "\n🤟모집 관련 정보🤟\n"+
+            "https://everytime.kr/418842/v/370226541"
     },
     {
         id: 36,
