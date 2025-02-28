@@ -16,7 +16,7 @@ const CategoriesNav = ({ categories }) => {
     useEffect(() => {
         const fetchLikeCount = async () => {
             try {
-                const response = await fetch('https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}');
+                const response = await fetch(`https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
                     const count = await response.json();
                     setClickCount(count);
