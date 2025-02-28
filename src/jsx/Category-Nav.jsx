@@ -13,21 +13,21 @@ const CategoriesNav = ({ categories }) => {
     const [isAnimate, setIsAnimate] = useState(false);// animation
 
    // ✅ 좋아요 수 및 상태 가져오기
-   useEffect(() => {
-    const fetchLikeCount = async () => {
-        try {
-            const response = await fetch(https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id});
-            if (response.ok) {
-                const count = await response.json();
-                setClickCount(count);
+    useEffect(() => {
+        const fetchLikeCount = async () => {
+            try {
+                const response = await fetch('https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}');
+                if (response.ok) {
+                    const count = await response.json();
+                    setClickCount(count);
+                }
+            } catch (error) {
+                console.error("좋아요 수 조회 실패:", error);
             }
-        } catch (error) {
-            console.error("좋아요 수 조회 실패:", error);
-        }
-    };
+        };
 
-    fetchLikeCount();
-}, [selectedCategory]);
+        fetchLikeCount();
+    }, [selectedCategory]);
 
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
