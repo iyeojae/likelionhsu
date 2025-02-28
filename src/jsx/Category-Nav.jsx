@@ -43,8 +43,8 @@ const CategoriesNav = ({ categories }) => {
                 const message = await response.text();
                 console.log("서버 응답:", message);
 
-                if (message === "좋아요를 이미 누르셨군요? 취소하겠습니다.") {
-                    alert("좋아요를 이미 누르셨군요? 취소하겠습니다.");
+                if (message === "좋아요가 취소되었습니다.") {
+                    alert("좋아요를 이미 누르셨군요? 한번 더 누르시면 취소랍니다🤔");
                     setLiked(false); // 좋아요 상태 해제
                     setClickCount((prev) => prev - 1);
                 } else {
