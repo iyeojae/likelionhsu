@@ -19,16 +19,34 @@ const CategoriesNav = ({ categories }) => {
                 const response = await fetch(`https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
                     const data = await response.json();
-                    setClickCount(data.count);
-                    setLiked(data.isLiked);
+                    console.log("서버 응답 데이터:", data); // 응답 확인
+    
+                    if (!data || typeof data.count === "undefined") {
+                        console.error("서버 응답이 올바르지 않습니다:", data);
+                        return;
+                    }
+    
+                    // 문자열을 숫자로 변환하고, NaN 방지
+                    const count = Number(data.count);
+                    if (isNaN(count)) {
+                        console.error("count 값이 유효하지 않습니다:", data.count);
+                        setClickCount(0); // 기본값 0으로 설정
+                    } else {
+                        setClickCount(count); // 숫자로 설정
+                    }
+    
+                    setLiked(Boolean(data.isLiked)); // isLiked 값 처리
+                } else {
+                    console.error("좋아요 데이터 불러오기 실패:", response.status);
                 }
             } catch (error) {
                 console.error("좋아요 수 조회 실패:", error);
             }
         };
-
+    
         fetchLikeCount();
     }, [selectedCategory]);
+    
 
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
