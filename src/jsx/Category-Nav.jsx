@@ -18,8 +18,11 @@ const CategoriesNav = ({ categories }) => {
             try {
                 const response = await fetch(`https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
-                    const count = await response.json();
-                    setClickCount(count);
+                    const data = await response.json();
+                    console.log("서버 응답 데이터:", data); // 서버 응답 데이터 확인 (디버깅)
+
+                    setClickCount(Number(data.count) || 0); // 좋아요 개수
+                    setLiked(Boolean(data.isLiked)); // 좋아요 상태 (불린 값)
                 }
             } catch (error) {
                 console.error("좋아요 수 조회 실패:", error);
@@ -27,7 +30,8 @@ const CategoriesNav = ({ categories }) => {
         };
 
         fetchLikeCount();
-    }, [selectedCategory]);
+    }, [selectedCategory]); // selectedCategory 변경 시마다 실행
+
 
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
@@ -44,7 +48,7 @@ const CategoriesNav = ({ categories }) => {
                 console.log("서버 응답:", message);
 
                 if (message === "좋아요가 취소되었습니다.") {
-                    alert("좋아요를 이미 누르셨군요? 한번 더 누르시면 취소랍니다🤔");
+                    alert("좋아요는 한번이면 충분!🦁");
                     setLiked(false); // 좋아요 상태 해제
                     setClickCount((prev) => prev - 1);
                 } else {
@@ -184,7 +188,7 @@ const CategoriesNav = ({ categories }) => {
                         >
                             <div className="like">
                                 <motion.img
-                                    src={liked ? likefill : like}
+                                    src={liked ? likefill : like}  // liked 상태에 따라 이미지 변경
                                     alt="like"
                                     className="like-img"
                                     onClick={handleImageClick}
@@ -192,6 +196,7 @@ const CategoriesNav = ({ categories }) => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
                                 />
+
                                 <motion.p
                                     key={clickCount}
                                     initial={{ opacity: 0, y: -5 }}
