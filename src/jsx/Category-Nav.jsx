@@ -18,8 +18,9 @@ const CategoriesNav = ({ categories }) => {
             try {
                 const response = await fetch(`https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
-                    const count = await response.json();
-                    setClickCount(count);
+                    const data = await response.json();
+                    setClickCount(data.count);
+                    setLiked(data.isLiked);
                 }
             } catch (error) {
                 console.error("좋아요 수 조회 실패:", error);
