@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Slider from "react-slick"; 
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import like from '../img/like.png';
 import likefill from '../img/likefill.png';
+import { AnimatePresence, motion } from "framer-motion"
 
-const CategoriesNav = ({ categories }) => { 
+const CategoriesNav = ({ categories }) => {
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [liked, setLiked] = useState(false);
     const [clickCount, setClickCount] = useState(0); // click like img for counting
@@ -26,7 +27,7 @@ const CategoriesNav = ({ categories }) => {
         };
 
         fetchLikeCount();
-    }, [selectedCategory]); 
+    }, [selectedCategory]);
 
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
@@ -37,11 +38,11 @@ const CategoriesNav = ({ categories }) => {
                     "Content-Type": "application/json"
                 }
             });
-    
+
             if (response.ok) {
                 const message = await response.text();
                 console.log("서버 응답:", message);
-    
+
                 if (message === "좋아요가 취소되었습니다.") {
                     alert("좋아요가 취소되었습니다.");
                     setLiked(false); // 좋아요 상태 해제
@@ -50,7 +51,7 @@ const CategoriesNav = ({ categories }) => {
                     // 좋아요 등록인 경우만 숫자 증가
                     setLiked(true);
                     setClickCount((prev) => prev + 1);
-    
+
                     // 애니메이션 효과
                     setIsAnimate(true);
                     setTimeout(() => setIsAnimate(false), 300);
@@ -62,7 +63,7 @@ const CategoriesNav = ({ categories }) => {
             console.error("좋아요 요청 중 오류 발생:", error);
         }
     };
-    
+
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
@@ -120,7 +121,7 @@ const CategoriesNav = ({ categories }) => {
     return (
         <div className="Categories"> {/* nav - button */}
             <div className="category-nav-container">
-            <Slider {...categorySliderSettings} className="category-nav-slider">
+                <Slider {...categorySliderSettings} className="category-nav-slider">
                     {categories.map((item) => (
                         <div key={item.id} className="category-slide" onClick={() => handleCategoryClick(item)} tabIndex="-1">
                             <div
@@ -150,72 +151,140 @@ const CategoriesNav = ({ categories }) => {
                     ))}
                 </Slider>
             </div>
-
-            <div className="txt-container-main"> {/* name, detail ( middle ) */}
-                <div className="cate-intro">
-                    <img src={selectedCategory.icon} alt={selectedCategory.name} className="cate-intro-image" />
-                    <div className="cate-intro-text">
-                        <h2 style={{fontSize:"27px", fontWeight:"bold"}}>{selectedCategory.name}<br /><span>{selectedCategory.detail}</span></h2>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={selectedCategory.id}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="category-content-container"
+                >
+                    <div className="txt-container-main">
+                        <div className="cate-intro">
+                            <img src={selectedCategory.icon} alt={selectedCategory.name} className="cate-intro-image" />
+                            <div className="cate-intro-text">
+                                <h2 style={{ fontSize: "27px", fontWeight: "bold" }}>
+                                    {selectedCategory.name}<br />
+                                    <span>{selectedCategory.detail}</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="cate-cont">
+                            <p style={{ whiteSpace: "pre-line" }}>{selectedCategory.short}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div className="cate-cont">
-                    <p style={{ whiteSpace: "pre-line" }}>{selectedCategory.short}</p>
-                </div>
-            </div>
-
-            {/* ✅ 좋아요 기능 추가 */}
-            <div className="like-container">
-                <div className="like-icon-cont">
-                    <div className="like">
-                        <img 
-                            src={liked ? likefill : like} 
-                            alt="like" 
-                            className={`like-img ${isAnimate ? "pop" : ""}`} 
-                            onClick={handleImageClick}
-                        />
-                        <p style={{ margin: 0 }}>{clickCount}</p>
-                        <p>이 동아리에 관심이 간다면<br />좋아요를 눌러주세요!</p>
+                    <div className="like-container">
+                        <motion.div
+                            className="like-icon-cont"
+                            initial={{ scale: 1 }}
+                            animate={isAnimate ? { scale: [1, 1.2, 1] } : { scale: 1 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                            <div className="like">
+                                <motion.img
+                                    src={liked ? likefill : like}
+                                    alt="like"
+                                    className="like-img"
+                                    onClick={handleImageClick}
+                                    whileTap={{ scale: 0.9 }}
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                                />
+                                <motion.p
+                                    key={clickCount}
+                                    initial={{ opacity: 0, y: -5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -5 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    style={{ margin: 0 }}
+                                >
+                                    {clickCount}
+                                </motion.p>
+                                <p>이 동아리에 관심이 간다면<br />좋아요를 눌러주세요!</p>
+                            </div>
+                        </motion.div>
                     </div>
-                </div>
-            </div>
-            <div className="Category-Content-container">
-    <div className="Category-Content">
-        <h1>{selectedCategory.name}
-            <br />
-            <span>{selectedCategory.detail}</span>
-        </h1>
+                </motion.div>
+            </AnimatePresence>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={selectedCategory.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="Category-Content-container"
+                >
+                    <div className="Category-Content">
+                        <h1>{selectedCategory.name}
+                            <br />
+                            <span>{selectedCategory.detail}</span>
+                        </h1>
 
-        {/* 이미지가 없으면 display: none 처리 */}
-        <div className="content-img">
-            {selectedCategory.img && (
-                <img src={selectedCategory.img} alt={selectedCategory.name} />
-            )}
-        </div>
+                        <div className="content-img">
+                            {selectedCategory.img && (
+                                <motion.img
+                                    src={selectedCategory.img}
+                                    alt={selectedCategory.name}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                />
+                            )}
+                        </div>
 
-        {/* `content1`이 있으면 먼저 처리 */}
-        {selectedCategory.content1 && (
-            <div>{formatContent(selectedCategory.content1)}</div>
-        )}
+                        {selectedCategory.content1 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {formatContent(selectedCategory.content1)}
+                            </motion.div>
+                        )}
 
-        {/* `active1`, `active2`, `active3` 이미지들 처리 */}
-        {["active1", "active2", "active3"].map((key) => (
-            selectedCategory[key] && (
-                <img key={key} src={selectedCategory[key]} alt={`active-${key}`} />
-            )
-        ))}
+                        {/* `active1`, `active2`, `active3` 이미지 애니메이션 추가 */}
+                        {["active1", "active2", "active3"].map((key) => (
+                            selectedCategory[key] && (
+                                <motion.img
+                                    key={key}
+                                    src={selectedCategory[key]}
+                                    alt={`active-${key}`}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                />
+                            )
+                        ))}
 
-        {/* `content2`가 있을 경우 그 후에 처리 */}
-        {selectedCategory.content2 && (
-            <div>{formatContent(selectedCategory.content2)}</div>
-        )}
+                        {selectedCategory.content2 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {formatContent(selectedCategory.content2)}
+                            </motion.div>
+                        )}
 
-        {/* `content`가 있을 경우 하나만 처리 (content1, content2가 없을 경우) */}
-        {selectedCategory.content && !selectedCategory.content1 && !selectedCategory.content2 && (
-            <div>{formatContent(selectedCategory.content)}</div>
-        )}
-    </div>
-</div>
+                        {selectedCategory.content && !selectedCategory.content1 && !selectedCategory.content2 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {formatContent(selectedCategory.content)}
+                            </motion.div>
+                        )}
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+
 
 
         </div>

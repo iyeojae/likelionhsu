@@ -1,8 +1,9 @@
 import React from "react";
 import "./css/App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { Route, Routes, useLocation, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./jsx/Navbar";
-import Home from "./jsx/Home";  // 기본 페이지
+import Home from "./jsx/Home";
 import Map from "./jsx/Map";
 import Perform from "./jsx/Perform";
 import Volunteer from "./jsx/Volunteer";
@@ -12,23 +13,117 @@ import Art from "./jsx/Art";
 import Hobby from "./jsx/Hobby";
 import Religion from "./jsx/Religion";
 
-const App = () => {
-  return (
-      <Router>
-        <Navbar /> {/* 모든 페이지에서 네비게이션 바 유지 */}
-        <Routes>
-          <Route path="/" element={<Home />} />  {/* 기본 경로를 Home 페이지로 설정 */}
-          <Route path="/map" element={<Map />} />
-          <Route path="/perform" element={<Perform />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/gym" element={<Gym />} />
-          <Route path="/art" element={<Art />} />
-          <Route path="/hobby" element={<Hobby />} />
-          <Route path="/religion" element={<Religion />} />
-        </Routes>
-      </Router>
-  );
+const pageVariants = { 
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeInOut",
+        },
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeInOut",
+        },
+    },
+};
+
+const AnimatedRoutes = () => {
+    const location = useLocation();
+
+    return (
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+                <Route
+                    path="/"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Home />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/map"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Map />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/perform"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Perform />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/volunteer"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Volunteer />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/education"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Education />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/gym"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Gym />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/art"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Art />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/hobby"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Hobby />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/religion"
+                    element={
+                        <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+                            <Religion />
+                        </motion.div>
+                    }
+                />
+            </Routes>
+        </AnimatePresence>
+    );
+};
+
+const App = () => { /*추가추갗구ㅏ*/
+    return (
+        <Router>
+            <Navbar /> {/* 고정 유지 */}
+            <AnimatedRoutes /> {/* 페이지 전환 애니메이션 */}
+        </Router>
+    );
 };
 
 export default App;
