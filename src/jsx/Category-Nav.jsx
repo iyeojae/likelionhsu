@@ -18,11 +18,8 @@ const CategoriesNav = ({ categories }) => {
             try {
                 const response = await fetch(`https://test.apilikelionhsu.shop/api/likes/${selectedCategory.id}`);
                 if (response.ok) {
-                    const data = await response.json();
-                    console.log("서버 응답 데이터:", data); // 서버 응답 데이터 확인 (디버깅)
-
-                    setClickCount(Number(data.count) || 0); // 좋아요 개수
-                    setLiked(Boolean(data.isLiked)); // 좋아요 상태 (불린 값)
+                    const count = await response.json();
+                    setClickCount(count);
                 }
             } catch (error) {
                 console.error("좋아요 수 조회 실패:", error);
@@ -30,8 +27,7 @@ const CategoriesNav = ({ categories }) => {
         };
 
         fetchLikeCount();
-    }, [selectedCategory]); // selectedCategory 변경 시마다 실행
-
+    }, [selectedCategory]);
 
     // ✅ 좋아요 클릭 시 서버 요청
     const handleImageClick = async () => {
@@ -188,7 +184,7 @@ const CategoriesNav = ({ categories }) => {
                         >
                             <div className="like">
                                 <motion.img
-                                    src={liked ? likefill : like}  // liked 상태에 따라 이미지 변경
+                                    src={liked ? likefill : like}
                                     alt="like"
                                     className="like-img"
                                     onClick={handleImageClick}
@@ -196,7 +192,6 @@ const CategoriesNav = ({ categories }) => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
                                 />
-
                                 <motion.p
                                     key={clickCount}
                                     initial={{ opacity: 0, y: -5 }}
