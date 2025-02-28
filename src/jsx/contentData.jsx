@@ -39,7 +39,7 @@ import Iconbaekgom from '../img/gym/jujitsu.png';
 import Iconily from '../img/education/book.png';
 import Imgily from '../img/intro/16.png';
 import Iconnaltry from '../img/education/naltry.png';
-import Imgnaltry from '../img/intro/17.png';
+import Imgnaltry from '../img/intro/37.png';
 import Icondadok from '../img/education/book.png';
 /*import Imgdadok from '../img/perform/intro/15.png';*/
 import Iconhanstudy from '../img/education/hanstudy.png';
@@ -145,6 +145,9 @@ import activityHiba1 from '../img/activity/히바1.jpg';
 import activityHiba2 from '../img/activity/히바2.jpg';
 import activityHiba3 from '../img/activity/히바3.jpg';
 
+import activityNaltry1 from '../img/activity/날트리1.jpg';
+import activityNaltry2 from '../img/activity/날트리2.png';
+import activityNaltry3 from '../img/activity/날트리3.png';
 
 
 export const performCategories = [ /* 공연 부분 동아리 정보 */
@@ -386,7 +389,7 @@ export const gymCategories = [
             "☎️문의☎️\n" +
             "https://www.instagram.com/hsu_crisis_baseball/"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368878220"},
+            "https://everytime.kr/418842/v/370671263"},
     {id:11,
         name:"MOVE",
         detail:"농구 동아리",
@@ -408,7 +411,7 @@ export const gymCategories = [
             "https://www.instagram.com/hsu_move_official/\n" +
             "010-3752-9485\n"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368936852"
+            "https://everytime.kr/418842/v/370829761"
         },
     {id:12,
         name:"HIBA",
@@ -601,10 +604,9 @@ export const educationCategories = [
         short: "창의적 항공 연구·제작을 함께하는 공간!",
         icon: Iconnaltry,
         img: Imgnaltry,
-        content: "\n" +
+        content1: "\n" +
             "동아리 소개\n" +
-            "NALTRY는 항공기 제작과 연구에 관심 있는 학생들이 모여 실제 항공기를 설계하고 제작하며, 다양한 대회에 참가하는 한서대학교의 대표적인 항공기 제작 동아리입니다. 최근 6년간 모든 대회 본선 진출 및 10개 부문에서 입상하며 우수한 성과를 이어가고 있습니다.\n" +
-            "올해는 서산/태안캠의 제약을 최소화하고, 학기 중에도 활발한 활동을 이어갈 수 있도록 프로젝트 기반 운영을 계획하고 있습니다. 팀을 구성하여 멘토-멘티 활동을 진행하고, 대회 진출 및 수상을 목표로 다양한 기술을 연구하고 적용해 나갑니다.\n" +
+            "NALTRY는 창의적이고 미래지향적인 항공기 제작을 목표로 하는 동아리로, 기체 설계 및 제작, 공력 해석(CFD), 전자 회로, 소프트웨어 등 다양한 기술을 활용해 대회에서 우수한 성과를 거두고 있다. 동아리는 기체 제작, 설계, 전자, 소프트웨어, 공력 해석, 조종 등 여섯 개의 분과로 나뉘어 체계적인 교육과 실습을 진행하며, 항공기계공학과 외 다양한 전공의 학생들이 협력한다. 항공기 설계와 제작에 관심이 있거나 직접 만든 기체를 하늘에 띄우며 성취감을 느끼고 싶은 낭만 넘치는 학생이라면 누구나 참여할 수 있다.\n" +
             "\n" +
             "활동내용\n" +
             "✈️ NALTRY는 5개 분야에서 활동합니다.\n" +
@@ -613,8 +615,11 @@ export const educationCategories = [
             "✈️ 전자 : 픽스호크·아두이노 회로 설계, 자동 이착륙·조종\n" +
             "✈️ 소프트웨어 : 미션 플래너 프로그래밍, YOLO 기반 사물 인식, 데이터 분석\n" +
             "✈️ 공력 분석 : 비행성·안정성 평가, 전산유체해석(CFD), 에어포일 분석\n"+
-            "\n"+
-            "☎️문의☎️\n" +
+            "\n",
+            active1:activityNaltry1,
+            active2:activityNaltry2,
+            active3:activityNaltry3,
+        content2: "☎️문의☎️\n" +
             "회장 : 23학번 항공기계공학과 김요준\n010-4546-7812\n부회장 : 20학번 항공기계공학과 최원진\n010-4403-4119\n"+
             "\n🤟모집 관련 정보🤟\n"+
             "https://everytime.kr/418842/v/370046490"
@@ -810,7 +815,7 @@ export const artCategories = [
             content2:"☎️문의☎️\n" +
             "https://www.instagram.com/lightpainters_hsu\n"+
                         "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368877300"
+            "https://everytime.kr/418842/v/370857497"
     },
 ];
 
@@ -892,7 +897,7 @@ export const hobbyCategories = [
             content2:"☎️문의☎️\n" +
             "https://www.instagram.com/sigol_moment?igsh=OTNjOHY3aWI5OG04"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/369528008"
+            "https://everytime.kr/418842/v/370715138"
     },
 ];
 
