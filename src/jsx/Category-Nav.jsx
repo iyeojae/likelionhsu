@@ -12,7 +12,7 @@ const CategoriesNav = ({ categories }) => {
     const [clickCount, setClickCount] = useState(0); // click like img for counting
     const [isAnimate, setIsAnimate] = useState(false);// animation
 
-   // ✅ 좋아요 수 및 상태 가져오기
+    // ✅ 좋아요 수 및 상태 가져오기
     useEffect(() => {
         const fetchLikeCount = async () => {
             try {
@@ -38,18 +38,24 @@ const CategoriesNav = ({ categories }) => {
                     "Content-Type": "application/json"
                 }
             });
-    
+
             if (response.ok) {
-                const data = await response.json();  // 서버에서 count와 isLiked를 받아옴
-                console.log("서버 응답:", data);
-    
-                // 서버에서 받아온 데이터로 상태 업데이트
-                setClickCount(data.count);  // 좋아요 개수
-                setLiked(data.isLiked);     // 좋아요 상태 (true/false)
-    
-                // 애니메이션 효과
-                setIsAnimate(true);
-                setTimeout(() => setIsAnimate(false), 300);
+                const message = await response.text();
+                console.log("서버 응답:", message);
+
+                if (message === "좋아요를 이미 누르셨군요? 취소하겠습니다.") {
+                    alert("좋아요를 이미 누르셨군요? 취소하겠습니다.");
+                    setLiked(false); // 좋아요 상태 해제
+                    setClickCount((prev) => prev - 1);
+                } else {
+                    // 좋아요 등록인 경우만 숫자 증가
+                    setLiked(true);
+                    setClickCount((prev) => prev + 1);
+
+                    // 애니메이션 효과
+                    setIsAnimate(true);
+                    setTimeout(() => setIsAnimate(false), 300);
+                }
             } else {
                 console.error("좋아요 요청 실패:", await response.text());
             }
@@ -57,7 +63,6 @@ const CategoriesNav = ({ categories }) => {
             console.error("좋아요 요청 중 오류 발생:", error);
         }
     };
-    
 
 
     const handleCategoryClick = (category) => {
