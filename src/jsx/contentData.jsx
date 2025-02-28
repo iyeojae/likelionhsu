@@ -771,6 +771,16 @@ export const volunteerCategories = [
             "\n🤟모집 관련 정보🤟\n"+
             "https://everytime.kr/418842/v/369227099"
     },
+    {
+        id : 37,
+        name: "SAVE",
+        detail: "봉사 동아리",
+        img:"",
+        icon:Iconchild,
+        content: "동아리 소개\n" +
+            "	적극적인 봉사활동을 통해 개인뿐만 아니라 사회와 공동체를 아름답게 변화시키는 선진들이 되기를 바라는 취지로 이 동아리 설립.\n" +
+            "\n"
+    }
 ];
 
 // art
