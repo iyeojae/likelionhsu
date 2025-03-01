@@ -701,7 +701,7 @@ export const volunteerCategories = [
             "회장 : 010-9224-2089\n" +
             "https://www.instagram.com/hs_laon"+
              "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368897298"
+            "https://everytime.kr/418842/v/370894963"
     },
     {
         id: 25,
