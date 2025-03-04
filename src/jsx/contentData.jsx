@@ -566,8 +566,8 @@ export const educationCategories = [
     {
         id: 19,
         name: "멋쟁이사자처럼",
-        detail: "코딩 동아리",
-        short: "아이디어를 실현하고\n웹 개발과 디자인을 함께 배우는\n멋쟁이사자처럼",
+        detail: "IT 동아리",
+        short: "이 사이트\n우리가 만들었어",
         icon: Iconlikelion,
         img: Imglikelion,
         content: "동아리 소개\n" +
