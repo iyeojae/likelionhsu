@@ -249,7 +249,7 @@ export const performCategories = [ /* 공연 부분 동아리 정보 */
             "https://www.instagram.com/2manymc_hsu\n"+
             "010-7243-9115"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/370066268"
+            "https://everytime.kr/418842/v/371469891"
         },
     {id:5,
         name:"발라더",
@@ -538,7 +538,7 @@ export const gymCategories = [
             "https://www.instagram.com/tae_te_official/\n"+
             "010-5035-4637 (쪽지로는 연락 받지 않음)"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368153345"},
+            "https://everytime.kr/418842/v/371669296"},
     {id:18,
         name:"백곰",
         detail:"주짓수 동아리",
@@ -848,7 +848,7 @@ export const hobbyCategories = [
             "☎️문의☎️\n" +
             "https://www.instagram.com/hsu_starrynight/"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/368853817"
+            "https://everytime.kr/418842/v/371453661"
     },
     {
         id: 31,
