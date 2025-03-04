@@ -596,7 +596,7 @@ export const educationCategories = [
             "\n한서대 멋쟁이사자처럼👇\nhttps://www.instagram.com/likelion_hsu/\n" +
             "멋쟁이사자처럼 대학 공식👇\nhttps://www.instagram.com/likelion.univ/"+
             "\n🤟모집 관련 정보🤟\n"+
-            "https://everytime.kr/418842/v/367957644"
+            "https://everytime.kr/418842/v/371804747"
     },
     {
         id: 20,
